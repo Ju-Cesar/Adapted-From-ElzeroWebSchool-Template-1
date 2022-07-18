@@ -1,0 +1,232 @@
+/* General Rules  Start*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 100%;
+    --mainColor: #10cab7;
+    --lightMainColor: rgba(24, 182, 166, 0.6);
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:visited,
+a:hover {
+    color: black;
+}
+ul {
+    list-style-type: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0% auto;
+
+}
+/*small screens*/
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*medium screens*/
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*large screens*/
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* General Rules  End*/
+
+/* Header Styling Start */
+header {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    padding: 10px 0%;
+    box-shadow: 0 0 10px rgba(24, 182, 166, 0.2);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container nav {
+    display: none;
+    position: absolute;
+    z-index: 2000;
+    top: 0%;
+    right: 0%;
+    width: 60%;
+    background-color: var(--mainColor);
+    height: 100vh;
+}
+header .container nav ul {
+    margin-top: 4rem;
+}
+header .container nav ul li {
+    padding: .5rem 0% .5rem 2rem;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+/* Animations on small screens */
+@media (max-width:767px){
+    header .container nav ul li:hover  {
+        background-color: var(--lightMainColor);
+        padding-left: 2.3rem;
+    }
+}
+
+header .container nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+}
+header .container .logo img{
+    width: 90px;
+}
+header .container .smallScreen-menu {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+header .container .smallScreen-menu span {
+    height: 4px;
+    background-color: var(--mainColor);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container .smallScreen-menu span:nth-child(2) {
+    width: 100%;
+}
+header .container .smallScreen-menu span:first-child {
+    width: 60%;
+    align-self: flex-end;
+}
+header .container .smallScreen-menu span:last-child {
+    width: 60%;
+}
+header .container .smallScreen-menu:hover span:not(:nth-child(2)) {
+    width: 100%;
+}
+header .container nav .close-smallScreen-menu {
+    float: right;
+    position: relative;
+    margin: .5rem;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+header .container nav .close-smallScreen-menu::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+header .container nav .close-smallScreen-menu:hover::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+header .container nav .close-smallScreen-menu::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+header .container nav .close-smallScreen-menu:hover::after{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+header .container nav.show-menu {
+    display: block;
+}
+
+@media (min-width:768px) {
+    header .container nav {
+        display: block;
+        position: unset;
+        width: auto;
+        background-color: transparent;
+        height: auto;
+    }
+    header .container .smallScreen-menu,
+    header .container nav .close-smallScreen-menu {
+        display: none;
+    }
+
+    header .container nav ul {
+        margin-top: 0%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    header .container nav ul li {
+        position: relative;
+        padding: .2rem 0% .2rem 2rem;
+    }
+    header .container nav ul li::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 0%;
+        left: 2rem;
+        top: -2px;
+        background-color: var(--mainColor);
+        transition: .3s;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -ms-transition: .3s;
+        -o-transition: .3s;
+}
+    header .container nav ul li:hover::before {
+        width: calc(100% - 2rem);
+    }
+    header .container nav ul li a {
+        color: rgb(22, 172, 157);
+        font-size: 1.2rem;
+    }
+}
+/* Header Styling End */

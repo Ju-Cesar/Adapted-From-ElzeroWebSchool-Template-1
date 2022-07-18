@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Template 1</title>
+        <!-- Render All Elements Normally -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- Main CSS File -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Google Font Cairo -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <a href="#" class="logo"><img src="images/logo.png" alt="Logo of the web site"></a>
+                <div id="mobile-menu-btn"  class="smallScreen-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <div id="close-mobile-menu" class="close-smallScreen-menu"></div>
+                    <ul>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- JS code for toggling menu on small screens Start-->
+        <script>
+            const openMenuBtn = document.getElementById("mobile-menu-btn");
+            const closeMenuBtn = document.getElementById("close-mobile-menu");
+            const navigation = document.querySelector("nav");
+
+            openMenuBtn.addEventListener('click',()=> {
+                navigation.classList.add("show-menu")
+            })
+            closeMenuBtn.addEventListener('click',()=> {
+                navigation.classList.remove("show-menu")
+            })
+        </script>
+        <!-- JS code for toggling menu on small screens End-->
+    </body>
+</html>
