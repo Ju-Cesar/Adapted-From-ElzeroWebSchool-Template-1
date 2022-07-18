@@ -8,6 +8,7 @@
     font-size: 100%;
     --mainColor: #10cab7;
     --lightMainColor: rgba(24, 182, 166, 0.6);
+    --headerHight: 59.4px;
 }
 body {
     font-family: 'Cairo', sans-serif;
@@ -55,11 +56,13 @@ ul {
 /* Header Styling Start */
 header {
     position: fixed;
+    background-color: white;
     left: 0%;
     top: 0%;
     width: 100%;
     padding: 10px 0%;
     box-shadow: 0 0 10px rgba(24, 182, 166, 0.2);
+    height: var(--headerHight);
 }
 header .container {
     display: flex;
@@ -230,3 +233,56 @@ header .container nav.show-menu {
     }
 }
 /* Header Styling End */
+
+/* Hero Section Styling Start */
+.hero {
+    margin-top: var(--headerHight);
+    height: calc(100vh - var(--headerHight));
+    background-image: url("/images/landing.jpg");
+    background-position: 100%;
+    background-size: cover;
+}
+.hero .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero .container h1 {
+    color: var(--mainColor);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hero .container p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+/* Hero Section Styling End */
+
+/* Portfolio Section Styling Start */
+.portfolio {
+    background-color: #f6f6f6;
+    padding: 4rem 0%;
+}
+.portfolio .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 3rem;
+}
+.portfolio .container .box {
+    text-align: center;
+}
+.portfolio .container .box i {
+    color: var(--mainColor);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.portfolio .container .box h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.portfolio .container .box p {
+    line-height: 2;
+}
+/* Portfolio Section Styling End */
